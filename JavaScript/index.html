@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="styles.css">  
+<script src="script.js"></script>
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="css/styles.css">
+      <style>
+        body { font-family: Arial, sans-serif; }
+        #welcomeBanner { background-color: blue; color: white; padding: 10px; text-align: center; }
+        .highlight { font-weight: bold; color: green; }
+        table, th, td { border: 1px solid black; border-collapse: collapse; }
+        img { width: 100px; height: 100px; border: 2px solid black; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#events">Events</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Welcome Banner -->
+    <div id="welcomeBanner">
+        Welcome to the Local Community Event Portal!
+        <span style="color: red; font-weight: bold;">Exclusive Offer Available!</span>
+    </div>
+
+    <!-- Image Gallery -->
+    <section id="events">
+        <h2>Community Event Gallery</h2>
+        <table>
+            <tr>
+                <td><img src="event1.jpg" alt="Event 1" title="Event 1"></td>
+                <td><img src="event2.jpg" alt="Event 2" title="Event 2"></td>
+                <td><img src="event3.jpg" alt="Event 3" title="Event 3"></td>
+            </tr>
+            <tr>
+                <td><img src="event4.jpg" alt="Event 4" title="Event 4"></td>
+                <td><img src="event5.jpg" alt="Event 5" title="Event 5"></td>
+                <td><img src="event6.jpg" alt="Event 6" title="Event 6"></td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Event Registration Form -->
+    <section id="registration">
+        <h2>Register for an Event</h2>
+        <form>
+            <label>Name: <input type="text" placeholder="Your Name" required autofocus></label><br>
+            <label>Email: <input type="email" placeholder="Your Email" required></label><br>
+            <label>Date: <input type="date" required></label><br>
+            <label>Event Type: 
+                <select id="eventType">
+                    <option>Concert</option>
+                    <option>Workshop</option>
+                    <option>Sports</option>
+                </select>
+            </label><br>
+            <label>Message: <textarea placeholder="Your Message"></textarea></label><br>
+            <input type="submit" value="Register">
+        </form>
+    </section>
+
+    <!-- Video Invite -->
+    <section id="video">
+        <h2>Event Promo Video</h2>
+        <video controls>
+            <source src="promo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- User Preferences -->
+    <section id="preferences">
+        <h2>Save Your Preferences</h2>
+        <button onclick="localStorage.setItem('preferredEvent', document.getElementById('eventType').value)">Save Preference</button>
+        <button onclick="localStorage.clear()">Clear Preferences</button>
+    </section>
+
+    <!-- Geolocation -->
+    <section id="geolocation">
+        <h2>Find Nearby Events</h2>
+        <button onclick="navigator.geolocation.getCurrentPosition(
+            position => alert('Your Location: ' + position.coords.latitude + ', ' + position.coords.longitude),
+            error => alert('Error in fetching location'),
+            { enableHighAccuracy: true })">Locate Events</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Local Community Event Portal</p>
+    </footer>
+
+</body>
+</html>
